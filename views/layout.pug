@@ -1,0 +1,15 @@
+doctype html
+html(lang='fr')
+  head
+    if title
+      title="PokeAPI | " + title
+    else
+      title="PokeAPI"
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=yes, shrink-to-fit=no')
+  body
+    block content
+  if panel !== true
+    footer Copyright <span style="font-family: Arial;font-weight: bold;">&copy;</span><script>document.write(' ' + new Date().getFullYear() + ` <a href="https://github.com/ianlcz" title="https://github.com/ianlcz" target="_blank">ianDev</a>`)</script>

@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+/* Importation des modules */
+const express = require("express");
+const debug = require("debug")("pokeapi:server");
+const http = require("http");
+const app = require("../app");
+
+/* Définition du port d'écoute */
+const PORT = process.env.PORT || 1996;
+app.set("port", PORT);
+
+const server = http.createServer(app);
+
+server.listen(PORT);
+server.on("error", onError);
+server.on("listening", onListening);
+
+function onError(error) {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+
+  switch (error.code) {
+    case "EACCES":
+      console.error(
+        typeof PORT === "string"
+          ? "Pipe " + PORT
+          : "Port " + PORT + " exige des privilèges élevés"
+      );
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(
+        typeof PORT === "string"
+          ? "Pipe " + PORT
+          : "Port " + PORT + " est déjà utilisé"
+      );
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+function onListening() {
+  const addr = server.address();
+  debug(
+    "Le serveur écoute sur le port",
+    typeof addr === "string" ? "pipe " + addr : addr.port
+  );
+}

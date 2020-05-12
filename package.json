@@ -1,0 +1,27 @@
+{
+  "name": "pokeapi",
+  "version": "1.0.0",
+  "description": "Ce projet consiste en la création d'une API REST de Pokémons avec Node.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianlcz/PokeAPI.git"
+  },
+  "author": "Yann Le Coz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ianlcz/PokeAPI/issues"
+  },
+  "homepage": "https://github.com/ianlcz/PokeAPI#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "pug": "^2.0.4",
+    "serve-favicon": "^2.5.0"
+  }
+}
