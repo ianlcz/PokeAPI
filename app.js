@@ -21,7 +21,7 @@ app.use(favicon("./public/images/favicon.png"));
 app.use(methodOverride("_method"));
 
 /*  Public routes
-    Such as /
+    Such as /, /login
 */
 app.use("/", publicRouter);
 

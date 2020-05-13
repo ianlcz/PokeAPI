@@ -13,4 +13,17 @@ router.get("/", async (req, res, next) => {
   });
 });
 
+/*
+  Login routes
+*/
+
+router.get("/login", (req, res, next) => {
+  res.render("user/login", {
+    title: "Connexion",
+    panel: true,
+    session: req.session,
+    user: req.user,
+  });
+});
+
 module.exports = router;

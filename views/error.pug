@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  div(id='panel')
+  div#panel
     body
     h1 Oups !
-    h2(id='codeError')= "Erreur " + status
-      span(id='panelError')= "La page que vous recherchez n'a pas été trouvée."
+    h2.codeError= "Erreur " + status
+      span.panelError= "La page que vous recherchez n'a pas été trouvée."
     nav
-      a(href='/' id='panelButton') Retourner à la page d'accueil
+      a#panelButton(href='/') Retourner à la page d'accueil
     footer Copyright <span style="font-family: Arial;font-weight: bold;">&copy;</span><script>document.write(' ' + new Date().getFullYear() + ` <a href="https://github.com/ianlcz" title="https://github.com/ianlcz" target="_blank">ianDev</a>`)</script>
