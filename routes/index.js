@@ -26,4 +26,18 @@ router.get("/login", (req, res, next) => {
   });
 });
 
+/*
+  Register routes
+*/
+
+router.get("/register", (req, res, next) => {
+  res.render("user/form", {
+    title: "Inscription",
+    isNew: true,
+    panel: true,
+    session: req.session,
+    user: req.user,
+  });
+});
+
 module.exports = router;

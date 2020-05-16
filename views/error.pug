@@ -4,7 +4,7 @@ block content
   div#panel
     body
     h1 Oups !
-    h2.codeError= "Erreur " + status
+    h2.codeError= status != undefined ? "Erreur " + status : ''
       span.panelError= "La page que vous recherchez n'a pas été trouvée."
     nav
       a#panelButton(href='/') Retourner à la page d'accueil

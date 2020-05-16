@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  div#panel
+    .panel.panel-default
+        .panel-header
+          h1= isNew ? 'Inscription' : 'Mise à jour du compte'
+        .panel-body
+          form(action= isNew ? '/register' : '/account' + '?_method=PATCH', method='POST').form-group
+            div#formPanel.register
+              div#formPanel
+                .form-group
+                  label(for='lastname') Nom
+                  input.form-control(type='text', name='lastname', placeholder="Entrez votre nom de famille")
+                .form-group
+                  label(for='firstname') Prénom
+                  input.form-control(type='text', name='firstname', placeholder="Entrez votre prénom")
+              .form-group
+                label(for='mail') Adresse mail
+                input.form-control(type='email', name='mail', placeholder="Entrez votre adresse mail")
+              div#formPanel
+                .form-group
+                  label(for='password') Mot de passe
+                  input.form-control(type='password', name='password', placeholder="Entrez votre mot de passe")
+                .form-group
+                  label(for='password') Confirmation du mot de passe
+                  input.form-control(type='password', name='password', placeholder="Retapez votre mot de passe")
+        input.btn.btn-default(type='submit', value= isNew ? "Je m'inscris" : "Mettre à jour")
+    footer Copyright <span style="font-family: Arial;font-weight: bold;">&copy;</span><script>document.write(' ' + new Date().getFullYear() + ` <a href="https://github.com/ianlcz" title="https://github.com/ianlcz" target="_blank">ianDev</a>`)</script>

@@ -75,8 +75,18 @@ a#panelButton:hover {
   margin: 2.6% auto 0.2% auto;
 }
 #panel a {
+  margin: inherit;
   color: inherit;
   font-weight: inherit;
+}
+div#linkPanel a {
+  display: block;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  color: #1864cf;
+  font-size: small;
+  font-weight: bold;
+  text-align: center;
 }
 
 h1 {
@@ -232,45 +242,64 @@ article h2 p span#categoryPokemon {
   width: 30%;
 }
 
+div.namePokemonGroup {
+  display: flex;
+  justify-content: space-around;
+}
+
 #panel.form {
   width: 60%;
 }
-#formPanel {
+div#formPanel {
   display: flex;
   margin: 1.6em auto;
+  margin-bottom: 0;
+  padding: 0;
   width: 100%;
   justify-content: space-around;
+}
+div#formPanel.register {
+  margin: 0;
+  flex-direction: column;
+}
+div#formPanel.register div#formPanel {
+  margin-bottom: 1.6em;
 }
 .form-group {
   display: flex;
   flex-direction: column;
+}
+form.form-group {
+  margin: 0;
+  padding: 0;
 }
 label {
   margin-bottom: 0.4em;
   font-weight: bold;
   text-align: center;
 }
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 0.6em 1em;
+}
 input {
   margin: 0 auto;
   font-family: "Montserrat";
-  color: var(--font-color);
+  color: #1864cf;
   border-radius: 20px;
-  border: 2px solid transparent;
+  border: transparent;
   box-shadow: inset 0px 0px 4px var(--shadow-color);
 }
-div.namePokemonGroup {
-  display: flex;
-  justify-content: space-around;
-}
-
-input[type="email"],
-input[type="password"] {
-  padding: 0.6em;
-  padding-left: 1.6em;
+::placeholder {
+  color: #1864cf;
+  font-weight: bold;
+  opacity: 0.6;
+  text-align: center;
 }
 input[type="submit"] {
   display: block;
-  padding: 0.4em 1.2em;
+  padding: 0.6em 1.2em;
   background: var(--button-background-color);
   color: white;
   font-size: 14px;
@@ -280,7 +309,6 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
   background: #1864cf;
-  border: 2px solid transparent;
   box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
