@@ -1,0 +1,58 @@
+extends ../layout
+
+block content
+  h1 Types
+  table(id='types')
+    tr
+      th Nom
+      th(colspan="3") Pokémon
+      th(colspan="3") Attaque
+    tr
+      th
+      th Résistant face aux types
+      th Immunisé aux types
+      th Faible face aux types
+      th Très efficaces sur les types
+      th Inefficaces sur les types
+      th Peu efficaces sur les types
+    tr
+      td
+        img(src='https://www.pokepedia.fr/images/4/4c/Miniature_Type_Eau_EB.png' class='pictureType')
+      td 
+        ul
+          li
+            img(src='https://www.pokepedia.fr/images/b/b9/Miniature_Type_Acier_EB.png' class='pictureType')
+          li
+            img(src='https://www.pokepedia.fr/images/4/4c/Miniature_Type_Eau_EB.png' class='pictureType')
+          li
+            img(src='https://www.pokepedia.fr/images/f/fc/Miniature_Type_Feu_EB.png' class='pictureType')
+          li
+            img(src='https://www.pokepedia.fr/images/7/7e/Miniature_Type_Glace_EB.png' class='pictureType')
+      td Aucun
+      td 
+        ul
+          li
+            img(src='https://www.pokepedia.fr/images/6/6c/Miniature_Type_Électrik_EB.png' class='pictureType')
+          li
+            img(src='https://www.pokepedia.fr/images/3/35/Miniature_Type_Plante_EB.png' class='pictureType')
+      td 
+        ul
+          li
+            img(src='https://www.pokepedia.fr/images/f/fc/Miniature_Type_Feu_EB.png' class='pictureType')
+          li
+            img(src='https://www.pokepedia.fr/images/d/d3/Miniature_Type_Roche_EB.png' class='pictureType')
+          li
+            img(src='https://www.pokepedia.fr/images/d/d6/Miniature_Type_Sol_EB.png' class='pictureType')
+      td Aucun
+      td 
+        <ul>
+          li
+            img(src='https://www.pokepedia.fr/images/2/23/Miniature_Type_Dragon_EB.png' class='pictureType')
+          li
+            img(src='https://www.pokepedia.fr/images/4/4c/Miniature_Type_Eau_EB.png' class='pictureType')
+          li
+            img(src='https://www.pokepedia.fr/images/3/35/Miniature_Type_Plante_EB.png' class='pictureType')
+  nav
+    a(href='/pokemons') Voir les Pokémons
+    a(href='/') Fermer le Pokédex
+    a(href='/generations') Voir les Générations

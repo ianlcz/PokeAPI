@@ -21,6 +21,7 @@ router.get("/login", (req, res, next) => {
   res.render("user/login", {
     title: "Connexion",
     panel: true,
+    originalUrl: req.originalUrl,
     session: req.session,
     user: req.user,
   });
@@ -35,6 +36,7 @@ router.get("/register", (req, res, next) => {
     title: "Inscription",
     isNew: true,
     panel: true,
+    originalUrl: req.originalUrl,
     session: req.session,
     user: req.user,
   });

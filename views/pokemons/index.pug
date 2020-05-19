@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h1 #{title}
+  table(id='pokedex')
+    tr
+      th Numéro National
+      th Image
+      th Nom
+      th Types
+
+    tr
+      td= '#'+"393"
+      td
+        img(src="https://www.pokepedia.fr/images/thumb/5/56/Tiplouf-Pt.png/500px-Tiplouf-Pt.png" class='picturePokemon')
+      td
+        ul
+          li
+            a(href="/pokemons/" + "#")= "Tiplouf"
+          li= "Piplup"
+            span(class="ISO_639_1")= '(EN)'
+          li= "ポッチャマ (Potchama) Pochama"
+            span(class="ISO_639_1")= '(JA)'
+      td
+        img(src='https://www.pokepedia.fr/images/thumb/4/4c/Miniature_Type_Eau_EB.png/136px-Miniature_Type_Eau_EB.png' class='pictureType')
+  nav
+    a(href='/generations') Voir les Générations
+    a(href='/') Fermer le Pokédex
+    a(href='/types') Voir les Types

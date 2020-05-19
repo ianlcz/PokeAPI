@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  h1 #{title}
+  table(id="generations")
+    tr
+      th Nom
+      th Titre
+      th Année de sortie
+      th Région
+    tr
+      td
+        a(href="/generations/" + "#")= "Première génération"
+      td= "Pokémon Rouge et Bleu"
+      td= "1998"
+      td= "Kanto"
+  nav
+    a(href='/types') Voir les Types
+    a(href='/') Fermer le Pokédex
+    a(href='/pokemons') Voir les Pokémons

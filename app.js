@@ -8,7 +8,10 @@ const favicon = require("serve-favicon");
 const app = express();
 
 // Initialisation des routes
-const publicRouter = require("./routes");
+const publicRouter = require("./routes/index");
+const pokemonRouter = require("./routes/pokemons");
+const generationRouter = require("./routes/generations");
+const typeRouter = require("./routes/types");
 
 app.set("views", "./views");
 app.set("view engine", "pug");
@@ -23,9 +26,12 @@ app.use(methodOverride("_method"));
 console.log("\nStarting server on http://localhost:1996/\n");
 
 /*  Public routes
-    Such as /, /login
+    Such as /, /login, /register, /pokemons
 */
 app.use("/", publicRouter);
+app.use("/pokemons", pokemonRouter);
+app.use("/generations", generationRouter);
+app.use("/types", typeRouter);
 
 // Error's middlewares
 app.use((req, res, next) => {

@@ -16,7 +16,7 @@
     "url": "https://github.com/ianlcz/PokeAPI/issues"
   },
   "homepage": "https://github.com/ianlcz/PokeAPI#readme",
-  "dependencies": {
+  "devDependencies": {
     "express": "^4.17.1",
     "http-errors": "^1.7.3",
     "method-override": "^3.0.0",

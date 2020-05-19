@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   div#panel
-    h1 Connexion
+    h1 #{title}
     form(action='/login', method='POST')
       div#formPanel
         .form-group
@@ -12,6 +12,6 @@ block content
           label(for='password') Mot de passe
           input.form-control(type='password', name='password', placeholder="Entrez votre mot de passe")
       div#linkPanel
-        a(href="./register") Je n'ai pas de compte
+        a(href="/register") Je n'ai pas de compte
       input.btn.btn-default(type='submit', value='Je me connecte')
     footer Copyright <span style="font-family: Arial;font-weight: bold;">&copy;</span><script>document.write(' ' + new Date().getFullYear() + ` <a href="https://github.com/ianlcz" title="https://github.com/ianlcz" target="_blank">ianDev</a>`)</script>
