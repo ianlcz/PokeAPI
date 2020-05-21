@@ -13,4 +13,11 @@ router.get("/", async (req, res, next) => {
   });
 });
 
+router.get("/:idPokemon", async (req, res, next) => {
+  res.render("pokemons/show", {
+    title: "#" + 393 + " " + "Tiplouf",
+    baseUrl: req.baseUrl,
+  });
+});
+
 module.exports = router;

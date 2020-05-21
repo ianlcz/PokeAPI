@@ -10,6 +10,7 @@ router.get("/", async (req, res, next) => {
   res.render("index", {
     title: "Bienvenue",
     panel: true,
+    originalUrl: req.originalUrl,
   });
 });
 

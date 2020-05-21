@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+  div#pokemon_show
+    section#leftPanel
+      article
+        h1 #{"Tiplouf"}
+          div#namePokemon
+            span.otherName #{"Piplup"}
+              span.codeISO= '(EN)'
+            span.otherName #{"ポッチャマ (Potchama) Pochama"}
+              span.codeISO= '(JA)'
+        img.picturePokemon(src="https://www.pokepedia.fr/images/5/56/Tiplouf-Pt.png")
+        div#infoPokemon
+          ul.types
+            li
+              img.pictureType(src='https://www.pokepedia.fr/images/thumb/4/4c/Miniature_Type_Eau_EB.png/136px-Miniature_Type_Eau_EB.png')
+        div#heightWeightPokemon
+          div#infoPokemon
+            h2= "Taille"
+            p #{0.4 + " m"}
+          div#infoPokemon
+            h2= "Poids"
+            p #{5.2 + " kg"}
+        div#infoPokemon
+          h2= "Talents"
+          ul.talents
+            li #{"Torrent"}
+            li #{"Acharné"}
+              span.hiddenTalent #{"Talent caché"}
+        div#infoPokemon
+          h2= "Catégorie"
+          p= "Pokémon "
+            span#categoryPokemon #{"Pingouin"}
+        div#infoPokemon
+          h2= "Point d'effort"
+          p #{"+" + 1 + " " + "Att. Spé"}
+        div#infoPokemon
+          h2= "Point d'expérience"
+          p #{66 + " exp."}
+        div#infoPokemon
+          h2= "Expérience au niveau 100"
+          p #{1059860 + " exp."}
+        div#infoPokemon
+          h2= "Taux de capture"
+          p #{45}
+    section#rightPanel
+      article
+  nav(style='justify-content: center;')
+    a(href='../pokemons') Fermer la fenêtre

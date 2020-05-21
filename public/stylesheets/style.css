@@ -24,11 +24,11 @@ html,
 body {
   margin: 0;
   padding: 0;
+  position: relative;
+  min-height: 100vh;
 }
 
 body {
-  position: relative;
-  min-height: 100vh;
   background: var(--background-color);
   color: white;
   font-family: "Montserrat";
@@ -131,7 +131,7 @@ table {
   color: var(--font-color);
   box-shadow: 0px 0px 10px var(--shadow-color);
 }
-table#pokedex,
+table#pokemon,
 table#generations {
   width: 70%;
 }
@@ -147,18 +147,21 @@ td {
 td img.picturePokemon {
   width: 40px;
 }
-td img.pictureType {
+img.pictureType {
   vertical-align: middle;
   width: 68px;
   border-radius: 4px;
 }
 
+td ul li:first-child {
+  margin-bottom: 0.4em;
+}
 td a {
+  padding: 0 4%;
   color: inherit;
   font-weight: bold;
 }
 td a:hover {
-  padding: 0 4%;
   color: white;
   border-radius: 10px;
   background: var(--button-background-color);
@@ -176,11 +179,10 @@ td ul {
   margin-left: 0;
   padding-left: 0;
 }
-span.ISO_639_1 {
+span.codeISO {
   margin-left: 8px;
   font-size: smaller;
   font-weight: bold;
-  border-radius: 100%;
 }
 
 a {
@@ -193,59 +195,100 @@ a:hover {
 
 #pokemon_show {
   display: flex;
-  height: 86vh;
 }
 section {
   padding: 2em;
+  padding-bottom: 0;
   width: 100%;
 }
 article {
   padding: 1em;
-  height: 100%;
   background: white;
   color: var(--font-color);
   border-radius: 20px;
-  box-shadow: 0px 0px 10px var(--shadow-color);
 }
-article h2 {
-  font-size: large;
-  text-align: center;
+section#leftPanel {
+  padding-right: inherit;
+  width: 50%;
 }
-article h2 p {
-  margin: 1.4em 0;
-  font-size: medium;
-  font-weight: normal;
-  text-align: center;
+section#leftPanel article {
+  box-shadow: 0px 0px 4px var(--shadow-color);
 }
-article h2 p span#categoryPokemon {
-  font-weight: bold;
-}
-
-#pokemon_show h1,
-#pokemon_show h1 div {
+section#leftPanel h1,
+section#leftPanel h1 div {
   display: flex;
   flex-direction: column;
 }
-#pokemon_show h1 div {
+section#leftPanel h1 {
+  font-size: x-large;
+}
+section#leftPanel h1 div {
   margin-top: 0.4em;
 }
-#pokemon_show h1 div span.otherName {
-  font-size: 62%;
+section#leftPanel h1 div#namePokemon span.otherName {
+  font-size: medium;
   font-weight: normal;
 }
-#pokemon_show img {
-  position: absolute;
-  top: 50%;
-  /* poussé de la moitié de hauteur de viewport */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* tiré de la moitié de sa propre hauteur */
-  width: 30%;
+section#leftPanel img.picturePokemon {
+  display: block;
+  margin: 2em auto;
+  width: 40%;
 }
-
-div.namePokemonGroup {
+section#leftPanel div#infoPokemon {
+  margin: 1.2em 0;
+}
+section#leftPanel div#infoPokemon ul.types {
+  display: flex;
+  margin: 0 auto;
+  padding-left: 0;
+  width: 40%;
+  justify-content: space-around;
+  list-style: none;
+}
+section#leftPanel div#heightWeightPokemon div#infoPokemon {
+  margin: inherit;
+}
+section#leftPanel div#heightWeightPokemon {
   display: flex;
   justify-content: space-around;
+}
+section#leftPanel div#infoPokemon h2 {
+  margin: 0;
+  font-size: large;
+  text-align: center;
+}
+section#leftPanel div#infoPokemon p {
+  font-weight: normal;
+  text-align: center;
+}
+section#leftPanel div#infoPokemon p,
+section#leftPanel div#infoPokemon ul.talents {
+  margin-top: 0.6em;
+  margin-bottom: 0;
+  font-size: medium;
+}
+section#leftPanel div#infoPokemon p span#categoryPokemon {
+  font-weight: bold;
+}
+section#leftPanel div#infoPokemon ul.talents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 0;
+  list-style: none;
+}
+section#leftPanel div#infoPokemon ul.talents li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  top: 50%;
+}
+section#leftPanel div#infoPokemon ul.talents li span.hiddenTalent {
+  font-size: smaller;
+  font-weight: bold;
+}
+section#rightPanel article {
+  box-shadow: inset 0px 0px 4px var(--shadow-color);
 }
 
 #panel.form {
@@ -315,7 +358,7 @@ input[type="submit"]:hover {
 
 footer {
   margin: 0 auto;
-  padding-bottom: 1px;
+  padding-bottom: 2px;
   text-align: center;
   text-transform: uppercase;
   font-family: "Righteous";
@@ -324,7 +367,7 @@ footer {
 
 @media screen and (max-width: 480px) {
   #panel,
-  table#pokedex {
+  table#pokemon {
     width: 90%;
   }
 }
