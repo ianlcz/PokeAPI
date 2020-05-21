@@ -15,7 +15,7 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:idPokemon", async (req, res, next) => {
   res.render("pokemons/show", {
-    title: "#" + 393 + " " + "Tiplouf",
+    title: "#" + 791 + " " + "Solgaleo",
     baseUrl: req.baseUrl,
   });
 });

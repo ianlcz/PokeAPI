@@ -4,47 +4,50 @@ block content
   div#pokemon_show
     section#leftPanel
       article
-        h1 #{"Tiplouf"}
+        h1 #{"Solgaleo"}
           div#namePokemon
-            span.otherName #{"Piplup"}
-              span.codeISO= '(EN)'
-            span.otherName #{"ポッチャマ (Potchama) Pochama"}
-              span.codeISO= '(JA)'
-        img.picturePokemon(src="https://www.pokepedia.fr/images/5/56/Tiplouf-Pt.png")
+            span.otherName #{"Solgaleo"}
+              span.codeISO= "(EN)"
+            span.otherName #{"ソルガレオ (Sorugareo) Solgaleo"}
+              span.codeISO= "(JA)"
+        img.picturePokemon(src="https://www.pokepedia.fr/images/a/a7/Solgaleo-SL.png" alt="Artwork de " + "Solgaleo")
+        div#infoPokemon.column
+          h2.generation #{"Septième génération"}
+        div#heightWeightPokemon
+          div#infoPokemon.column
+            h2= "Taille"
+            p #{3.4 + " m"}
+          div#infoPokemon.column
+            h2= "Poids"
+            p #{230.0 + " kg"}
         div#infoPokemon
           ul.types
             li
-              img.pictureType(src='https://www.pokepedia.fr/images/thumb/4/4c/Miniature_Type_Eau_EB.png/136px-Miniature_Type_Eau_EB.png')
-        div#heightWeightPokemon
-          div#infoPokemon
-            h2= "Taille"
-            p #{0.4 + " m"}
-          div#infoPokemon
-            h2= "Poids"
-            p #{5.2 + " kg"}
-        div#infoPokemon
-          h2= "Talents"
-          ul.talents
-            li #{"Torrent"}
-            li #{"Acharné"}
-              span.hiddenTalent #{"Talent caché"}
-        div#infoPokemon
+              img.pictureType(src="https://www.pokepedia.fr/images/d/da/Miniature_Type_Psy_EB.png" alt="Symbole du type " + "Psy")
+            li
+              img.pictureType(src="https://www.pokepedia.fr/images/b/b9/Miniature_Type_Acier_EB.png" alt="Symbole du type " + "Acier")
+        div#infoPokemon.row
           h2= "Catégorie"
           p= "Pokémon "
-            span#categoryPokemon #{"Pingouin"}
-        div#infoPokemon
+            span#categoryPokemon #{"Halo Solaire"}
+        div#infoPokemon.row
+          h2= "Talent"
+          ul.talents
+            li #{"Métallo-Garde"}
+        div#infoPokemon.row
           h2= "Point d'effort"
-          p #{"+" + 1 + " " + "Att. Spé"}
-        div#infoPokemon
+          p #{"+" + 3 + " " + "Attaque"}
+        div#infoPokemon.row
           h2= "Point d'expérience"
-          p #{66 + " exp."}
-        div#infoPokemon
+          p #{306 + " exp."}
+        div#infoPokemon.row
           h2= "Expérience au niveau 100"
-          p #{1059860 + " exp."}
-        div#infoPokemon
+          p #{1250000 + " exp."}
+        div#infoPokemon.row
           h2= "Taux de capture"
           p #{45}
+        
     section#rightPanel
       article
-  nav(style='justify-content: center;')
-    a(href='../pokemons') Fermer la fenêtre
+  nav(style="justify-content: center;")
+    a(href="../pokemons") Fermer la fenêtre

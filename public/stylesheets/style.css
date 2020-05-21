@@ -138,14 +138,11 @@ table#generations {
 table#types {
   width: 90%;
 }
-th {
-  margin-bottom: 1em;
-}
 td {
   text-align: center;
 }
 td img.picturePokemon {
-  width: 40px;
+  width: 50px;
 }
 img.pictureType {
   vertical-align: middle;
@@ -153,7 +150,7 @@ img.pictureType {
   border-radius: 4px;
 }
 
-td ul li:first-child {
+td.namePokemon ul li:first-child {
   margin-bottom: 0.4em;
 }
 td a {
@@ -202,7 +199,7 @@ section {
   width: 100%;
 }
 article {
-  padding: 1em;
+  padding: 1em 2em;
   background: white;
   color: var(--font-color);
   border-radius: 20px;
@@ -236,21 +233,15 @@ section#leftPanel img.picturePokemon {
 }
 section#leftPanel div#infoPokemon {
   margin: 1.2em 0;
+  display: flex;
 }
 section#leftPanel div#infoPokemon ul.types {
   display: flex;
   margin: 0 auto;
   padding-left: 0;
-  width: 40%;
+  width: 46%;
   justify-content: space-around;
   list-style: none;
-}
-section#leftPanel div#heightWeightPokemon div#infoPokemon {
-  margin: inherit;
-}
-section#leftPanel div#heightWeightPokemon {
-  display: flex;
-  justify-content: space-around;
 }
 section#leftPanel div#infoPokemon h2 {
   margin: 0;
@@ -258,37 +249,82 @@ section#leftPanel div#infoPokemon h2 {
   text-align: center;
 }
 section#leftPanel div#infoPokemon p {
+  margin: 0;
   font-weight: normal;
   text-align: center;
-}
-section#leftPanel div#infoPokemon p,
-section#leftPanel div#infoPokemon ul.talents {
-  margin-top: 0.6em;
-  margin-bottom: 0;
-  font-size: medium;
 }
 section#leftPanel div#infoPokemon p span#categoryPokemon {
   font-weight: bold;
 }
-section#leftPanel div#infoPokemon ul.talents {
+section#leftPanel div#infoPokemon ul.talents li span.hiddenTalent {
+  font-size: smaller;
+  font-weight: bold;
+}
+section#leftPanel div#heightWeightPokemon {
+  display: flex;
+  justify-content: space-around;
+}
+section#leftPanel div#infoPokemon.row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+section#leftPanel div#infoPokemon.row p,
+section#leftPanel div#infoPokemon.row ul.talents {
+  font-size: medium;
+  vertical-align: baseline;
+}
+section#leftPanel div#infoPokemon.column {
+  flex-direction: column;
+}
+section#leftPanel div#heightWeightPokemon div#infoPokemon.column {
+  margin: inherit;
+}
+section#leftPanel div#infoPokemon.column p,
+section#leftPanel div#infoPokemon.column ul.talents {
+  margin-top: 0.6em;
+  margin-bottom: 0;
+  font-size: medium;
+}
+section#leftPanel div#infoPokemon.column ul.talents {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding-left: 0;
   list-style: none;
 }
-section#leftPanel div#infoPokemon ul.talents li {
+section#leftPanel div#infoPokemon.column h2.generation {
+  margin: 0 auto;
+  padding: 2px 8px;
+  width: fit-content;
+  background: var(--button-background-color);
+  color: white;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-family: Righteous;
+  font-size: small;
+  font-weight: normal;
+  box-shadow: inset 0px 0px 4px var(--shadow-color);
+}
+section#leftPanel div#infoPokemon.row ul.talents {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding-left: 0;
+  justify-content: space-around;
+  list-style: none;
+}
+section#leftPanel div#infoPokemon.column ul.talents li {
   display: flex;
   flex-direction: column;
   text-align: center;
   top: 50%;
 }
-section#leftPanel div#infoPokemon ul.talents li span.hiddenTalent {
-  font-size: smaller;
-  font-weight: bold;
+section#leftPanel div#infoPokemon.row ul.talents li span.hiddenTalent {
+  margin-left: 1em;
 }
 section#rightPanel article {
-  box-shadow: inset 0px 0px 4px var(--shadow-color);
+  box-shadow: inherit;
 }
 
 #panel.form {

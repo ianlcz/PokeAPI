@@ -26,12 +26,12 @@ app.use(methodOverride("_method"));
 console.log("\nStarting server on http://localhost:1996/\n");
 
 /*  Public routes
-    Such as /, /login, /register, /pokemons
+    Such as /, /login, /register, /pokemons, /types, /generations
 */
 app.use("/", publicRouter);
 app.use("/pokemons", pokemonRouter);
-app.use("/generations", generationRouter);
 app.use("/types", typeRouter);
+app.use("/generations", generationRouter);
 
 // Error's middlewares
 app.use((req, res, next) => {

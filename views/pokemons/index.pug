@@ -10,20 +10,24 @@ block content
       th Types
 
     tr
-      td= '#'+"393"
+      td #{"#" + 791}
       td
-        img.picturePokemon(src="https://www.pokepedia.fr/images/thumb/5/56/Tiplouf-Pt.png/500px-Tiplouf-Pt.png")
+        img.picturePokemon(src="https://www.pokepedia.fr/images/a/a7/Solgaleo-SL.png" alt="Artwork de " + "Solgaleo")
+      td.namePokemon
+        ul
+          li
+            a(href="/pokemons/" + "791" title="Voir les informations") #{"Solgaleo"}
+          li #{"Solgaleo"}
+            span.codeISO= "(EN)"
+          li #{"ソルガレオ (Sorugareo) Solgaleo"}
+            span.codeISO= "(JA)"
       td
         ul
           li
-            a(href="/pokemons/" + "393") #{"Tiplouf"}
-          li #{"Piplup"}
-            span.codeISO= '(EN)'
-          li #{"ポッチャマ (Potchama) Pochama"}
-            span.codeISO= '(JA)'
-      td
-        img.pictureType(src='https://www.pokepedia.fr/images/thumb/4/4c/Miniature_Type_Eau_EB.png/136px-Miniature_Type_Eau_EB.png')
+            img.pictureType(src="https://www.pokepedia.fr/images/d/da/Miniature_Type_Psy_EB.png" alt="Symbole du type " + "Psy")
+          li
+              img.pictureType(src="https://www.pokepedia.fr/images/b/b9/Miniature_Type_Acier_EB.png" alt="Symbole du type " + "Acier")
   nav
-    a(href='/generations') Voir les Générations
-    a(href='/') Fermer le Pokédex
-    a(href='/types') Voir les Types
+    a(href="/generations") Voir les Générations
+    a(href="/") Fermer le Pokédex
+    a(href="/types") Voir les Types
