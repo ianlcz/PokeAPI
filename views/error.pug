@@ -7,5 +7,6 @@ block content
     h2.codeError= status != undefined ? "Erreur " + status : ''
       span.panelError= "La page que vous recherchez n'a pas été trouvée."
     nav
-      a#panelButton(href='/') Retourner à la page d'accueil
+      a#panelButton.error(href='/' title="Retourner à la page d'accueil")
+        i(class="fas fa-home")
     footer Copyright <span style="font-family: Arial;font-weight: bold;">&copy;</span><script>document.write(' ' + new Date().getFullYear() + ` <a href="https://github.com/ianlcz" title="https://github.com/ianlcz" target="_blank">ianDev</a>`)</script>

@@ -14,10 +14,20 @@
 }
 
 :root {
-  --font-color: #0f3f83;
-  --background-color: radial-gradient(#114da1, var(--font-color)) no-repeat;
-  --button-background-color: linear-gradient(24deg, var(--font-color), #1864cf);
+  --font-color: #114da1;
+  --font-light-color: #1864cf;
+  --font-darken-color: #0f3f83;
   --shadow-color: #282c34a2;
+  --background-color: radial-gradient(
+      var(--font-color),
+      var(--font-darken-color)
+    )
+    no-repeat;
+  --button-background-color: linear-gradient(
+    24deg,
+    var(--font-darken-color),
+    var(--font-light-color)
+  );
 }
 
 html,
@@ -46,8 +56,8 @@ body {
   width: 40%;
   border-radius: 20px;
   background: white;
-  color: var(--font-color);
-  box-shadow: 0px 0px 10px var(--shadow-color);
+  color: var(--font-darken-color);
+  box-shadow: 0px 0px 20px var(--shadow-color);
 }
 h2.codeError {
   margin: 2em 0 1.4em 0;
@@ -68,7 +78,17 @@ a#panelButton:hover {
   background: var(--button-background-color);
   color: white;
   border-radius: 20px;
-  box-shadow: inset 0px 0px 4px var(--shadow-color);
+  box-shadow: inset 0px 0px 10px var(--shadow-color);
+}
+a#panelButton.error {
+  background: var(--button-background-color);
+  color: white;
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 10px var(--shadow-color);
+}
+a#panelButton.error:hover {
+  background: var(--font-light-color);
+  box-shadow: 0px 0px 4px var(--shadow-color);
 }
 #panel footer {
   color: inherit;
@@ -83,7 +103,7 @@ div#linkPanel a {
   display: block;
   margin-top: 1.2em;
   margin-bottom: 1.2em;
-  color: #1864cf;
+  color: var(--font-light-color);
   font-size: small;
   font-weight: bold;
   text-align: center;
@@ -114,7 +134,7 @@ nav a:link {
 }
 nav a:hover {
   background: white;
-  color: var(--font-color);
+  color: var(--font-darken-color);
   border-radius: 20px;
   font-weight: bold;
   box-shadow: inherit;
@@ -123,53 +143,48 @@ nav a:hover {
   justify-content: space-around;
 }
 
-table {
+table#pokemon,
+table#generation,
+table#type {
   margin: 2em auto;
   padding: 2%;
   border-radius: 20px;
   background: white;
-  color: var(--font-color);
+  color: var(--font-darken-color);
   box-shadow: 0px 0px 10px var(--shadow-color);
 }
 table#pokemon,
-table#generations {
+table#generation {
   width: 70%;
 }
-table#types {
+table#type {
   width: 90%;
 }
 td {
   text-align: center;
 }
 td img.picturePokemon {
-  width: 50px;
+  width: 60px;
 }
 img.pictureType {
   vertical-align: middle;
   width: 68px;
   border-radius: 4px;
 }
-
 td.namePokemon ul li:first-child {
   margin-bottom: 0.4em;
 }
 td a {
-  padding: 0 4%;
+  padding: 2px 12px;
   color: inherit;
   font-weight: bold;
 }
 td a:hover {
   color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   background: var(--button-background-color);
   box-shadow: 0px 0px 2px var(--shadow-color);
   text-decoration: none;
-}
-#generations td a {
-  padding: 0 4%;
-}
-#generations td a:hover {
-  font-weight: bold;
 }
 td ul {
   list-style: none;
@@ -201,7 +216,7 @@ section {
 article {
   padding: 1em 2em;
   background: white;
-  color: var(--font-color);
+  color: var(--font-darken-color);
   border-radius: 20px;
 }
 section#leftPanel {
@@ -209,7 +224,7 @@ section#leftPanel {
   width: 50%;
 }
 section#leftPanel article {
-  box-shadow: 0px 0px 4px var(--shadow-color);
+  box-shadow: 0px 0px 10px var(--shadow-color);
 }
 section#leftPanel h1,
 section#leftPanel h1 div {
@@ -229,7 +244,20 @@ section#leftPanel h1 div#namePokemon span.otherName {
 section#leftPanel img.picturePokemon {
   display: block;
   margin: 2em auto;
-  width: 40%;
+  width: 50%;
+}
+section#leftPanel div#infoPokemon.column h2.status {
+  margin: 0 auto;
+  padding: 2px 8px;
+  width: fit-content;
+  background: var(--button-background-color);
+  color: white;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-family: Righteous;
+  font-size: small;
+  font-weight: normal;
+  box-shadow: inset 0px 0px 4px var(--shadow-color);
 }
 section#leftPanel div#infoPokemon {
   margin: 1.2em 0;
@@ -260,7 +288,7 @@ section#leftPanel div#infoPokemon ul.talents li span.hiddenTalent {
   font-size: smaller;
   font-weight: bold;
 }
-section#leftPanel div#heightWeightPokemon {
+div#container {
   display: flex;
   justify-content: space-around;
 }
@@ -293,19 +321,6 @@ section#leftPanel div#infoPokemon.column ul.talents {
   padding-left: 0;
   list-style: none;
 }
-section#leftPanel div#infoPokemon.column h2.generation {
-  margin: 0 auto;
-  padding: 2px 8px;
-  width: fit-content;
-  background: var(--button-background-color);
-  color: white;
-  border-radius: 20px;
-  text-transform: uppercase;
-  font-family: Righteous;
-  font-size: small;
-  font-weight: normal;
-  box-shadow: inset 0px 0px 4px var(--shadow-color);
-}
 section#leftPanel div#infoPokemon.row ul.talents {
   display: flex;
   flex-direction: row;
@@ -325,6 +340,37 @@ section#leftPanel div#infoPokemon.row ul.talents li span.hiddenTalent {
 }
 section#rightPanel article {
   box-shadow: inherit;
+}
+
+div#account {
+  margin: 2em 0 2em 0;
+}
+div#account div#container {
+  margin: 1em 0;
+}
+div#account div#container:first-child,
+div#account div#container:last-child {
+  margin: 0;
+}
+div#account div#container div#infoAccount {
+  display: flex;
+}
+div#account div#container div#infoAccount h2,
+div#account div#container div#infoAccount p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+div#account div#container div#infoAccount h2 {
+  margin-bottom: 0.2em;
+  font-size: large;
+}
+div#account div#container div#infoAccount.column {
+  flex-direction: column;
+}
+nav#account a#panelButton.account,
+nav#account input[type="submit"] {
+  padding: 0.2em 1em;
 }
 
 #panel.form {
@@ -363,21 +409,23 @@ input[type="email"],
 input[type="password"] {
   padding: 0.6em 1em;
 }
-input {
+input,
+a#panelButton.account {
   margin: 0 auto;
   font-family: "Montserrat";
-  color: #1864cf;
+  color: var(--font-light-color);
   border-radius: 20px;
   border: transparent;
   box-shadow: inset 0px 0px 4px var(--shadow-color);
 }
 ::placeholder {
-  color: #1864cf;
+  color: var(--font-light-color);
   font-weight: bold;
   opacity: 0.6;
   text-align: center;
 }
-input[type="submit"] {
+input[type="submit"],
+a#panelButton.account {
   display: block;
   padding: 0.6em 1.2em;
   background: var(--button-background-color);
@@ -387,9 +435,14 @@ input[type="submit"] {
   text-transform: uppercase;
   cursor: pointer;
 }
-input[type="submit"]:hover {
-  background: #1864cf;
+input[type="submit"]:hover,
+a#panelButton.account:hover {
+  background: var(--font-light-color);
   box-shadow: 0px 0px 4px var(--shadow-color);
+}
+
+i {
+  font-size: large;
 }
 
 footer {

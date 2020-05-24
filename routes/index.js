@@ -6,6 +6,12 @@ const router = express.Router();
   Index routes
 */
 
+router.all("/*", (req, res, next) => {
+  res.header("Developer", "Yann Le Coz (alias ianDev)");
+  res.header("Developer-Url", "https://yannlecoz.fr");
+  next();
+});
+
 router.get("/", async (req, res, next) => {
   res.render("index", {
     title: "Bienvenue",

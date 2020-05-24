@@ -7,15 +7,15 @@ const router = express.Router();
 */
 
 router.get("/", async (req, res, next) => {
-  res.render("pokemons/index", {
+  res.render("pokemon/index", {
     title: "Pokémons",
     baseUrl: req.baseUrl,
   });
 });
 
 router.get("/:idPokemon", async (req, res, next) => {
-  res.render("pokemons/show", {
-    title: "#" + 791 + " " + "Solgaleo",
+  res.render("pokemon/show", {
+    title: 791 + " - " + "Solgaleo",
     baseUrl: req.baseUrl,
   });
 });

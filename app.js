@@ -33,6 +33,10 @@ app.use("/pokemons", pokemonRouter);
 app.use("/types", typeRouter);
 app.use("/generations", generationRouter);
 
+/*  Private routes
+    Such as /account
+*/
+
 // Error's middlewares
 app.use((req, res, next) => {
   res.status(404).format({

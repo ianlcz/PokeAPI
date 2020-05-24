@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  div#panel
+    h1 Mon compte
+    div#account
+      div#container
+        div#infoAccount.column
+          h2 Nom
+          p #{"Le Coz"}
+        div#infoAccount.column
+          h2 Prénom
+          p #{"Yann"}
+      div#container
+        div#infoAccount.column
+          h2 Adresse mail
+          p #{"yann.lecoz@ynov.com"} 
+      div#container
+        div#infoAccount.column
+          h2 Créé le
+          p #{"2020-07-02"}
+        div#infoAccount.column
+          h2 Mise à jour le
+          p #{"2020-07-02"}
+    nav#account
+      a#panelButton.account(href='/account/edit') Mettre à jour
+      form(action='/account?_method=DELETE', method='POST')
+        input.btn.btn-default(type='submit', value='Supprimer le compte')
+    footer Copyright <span style="font-family: Arial;font-weight: bold;">&copy;</span><script>document.write(' ' + new Date().getFullYear() + ` <a href="https://github.com/ianlcz" title="https://github.com/ianlcz" target="_blank">ianDev</a>`)</script>
+      

@@ -7,7 +7,7 @@ const router = express.Router();
 */
 
 router.get("/", async (req, res, next) => {
-  res.render("types/index", {
+  res.render("type/index", {
     title: "Types",
     baseUrl: req.baseUrl,
   });
