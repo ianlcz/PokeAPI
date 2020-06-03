@@ -4,7 +4,7 @@ block content
   div#panel
     .panel.panel-default
         .panel-header
-          h1= isNew ? 'Inscription' : 'Mise à jour du compte'
+          h1= isNew ? 'Inscription' : 'Mise à jour de votre compte'
         .panel-body
           form(action= isNew ? '/register' : '/account' + '?_method=PATCH', method='POST').form-group
             div#formPanel.register

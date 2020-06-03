@@ -2,10 +2,7 @@ doctype html
 html(lang='fr')
   head
     if title
-      if !["/", "/login", "/register"].includes(originalUrl) && !["/pokemons", "/generations", "/types", "/login", "/register"].includes(baseUrl)
-        title="PokeAPI | Espace Dresseur - " + title
-      else
-        title="PokeAPI | " + title
+      title= title + " | PokeAPI"
     else
       title="PokeAPI"
     link(rel='stylesheet', href='/stylesheets/style.css')

@@ -1,6 +1,7 @@
 // Importation des modules
 const express = require("express");
 const logger = require("morgan");
+const session = require("./utils/session");
 const methodOverride = require("method-override");
 const favicon = require("serve-favicon");
 

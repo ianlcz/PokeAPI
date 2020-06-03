@@ -12,7 +12,8 @@ block content
               span.codeISO= "(JA)"
         img.picturePokemon(src="https://www.pokepedia.fr/images/a/a7/Solgaleo-SL.png" alt="Artwork de " + "Solgaleo")
         div#infoPokemon.column
-          h2.status #{"Pokémon légendaire"}
+          p.pokedex-description #{"Il viendrait d'un autre monde. Tout son corps émet une puissante lumière qui peut changer la nuit la plus noire en un jour radieux."}
+          p.status #{"Pokémon légendaire"}
         div#container
           div#infoPokemon.column
             h2= "Taille"
@@ -32,11 +33,12 @@ block content
             span#categoryPokemon #{"Halo Solaire"}
         div#infoPokemon.row
           h2= "Talent"
-          ul.talents
+          ul.values
             li #{"Métallo-Garde"}
         div#infoPokemon.row
           h2= "Point d'effort"
-          p #{"+" + 3 + " " + "Attaque"}
+          ul.values
+            li #{"+" + 3 + " " + "Attaque"}
         div#infoPokemon.row
           h2= "Point d'expérience"
           p #{306 + " exp."}
@@ -48,6 +50,47 @@ block content
           p #{45}
         
     section#rightPanel
-      article
-  nav(style="justify-content: center;")
+      article#description
+        h2= "Quelques informations"
+        h3= "Étymologies"
+        ul
+          li #{"Français, anglais, allemand, japonais, coréen : ソルガレオ (et 솔가레오) Solgaleo vient de sol (soleil, en latin), de Galilée (célèbre astronome, ayant défendu la thèse selon laquelle le soleil est au centre de l'univers) et de leo (lion, en latin)."}
+          li #{"Chinois (Cantonais) : 索爾迦雷歐 Sokyíhgālèuihāu vient de ソルガレオ Solgaleo, le nom japonais de Solgaleo."}
+          li #{"Chinois (Mandarin) : 索爾迦雷歐 / 索尔迦雷欧 Suǒ'ěrjiāléi'ōu vient de ソルガレオ Solgaleo, le nom japonais de Solgaleo."}
+      article#evolution
+        h2= "Chaîne d'évolution"
+        div#evolution
+          img(src="https://www.pokepedia.fr/images/6/6f/Cosmog-SL.png" alt="Artwork de " + "Cosmog")
+          h3
+            a(href="/pokemons/" + 789 title="Voir " + "Cosmog") #{"Cosmog"}
+        div#evolution
+          div#meanEvolution
+            i(class="fas fa-arrow-alt-circle-down")
+            p #{"Niveau 43"}
+          img(src="https://www.pokepedia.fr/images/1/12/Cosmovum-SL.png" alt="Artwork de " + "Cosmovum")
+          h3 
+            a(href="/pokemons/" + 790 title="Voir " + "Cosmovum") #{"Cosmovum"}
+        div#container
+          div#evolution
+            div#meanEvolution
+                i(class="fas fa-arrow-alt-circle-down")
+                p #{"Pokémon Soleil - Niveau 53"}
+            img(src="https://www.pokepedia.fr/images/a/a7/Solgaleo-SL.png" alt="Artwork de " + "Solgaleo")
+            h3 #{"Solgaleo"}
+          div#evolution
+            div#meanEvolution
+                i(class="fas fa-arrow-alt-circle-down")
+                p #{"Pokémon Lune - Niveau 53"}
+            img(src="https://www.pokepedia.fr/images/d/d7/Lunala-SL.png" alt="Artwork de " + "Lunala")
+            h3
+              a(href="/pokemons/" + 792 title="Voir " + "Lunala") #{"Lunala"}
+      article#shape
+        h2="Formes"
+        div#container
+          div#shape-container
+            img.picturePokemon(src="https://www.pokepedia.fr/images/f/fc/Solgaleo_%28Phase_Soleil_Levant%29-SL.png", alt="shape de " + "Solgaleo" + ": " + "Phase « Soleil Levant »")
+            div#shape-description
+              h3 #{"Phase « Soleil Levant »"}
+              p #{"Solgaleo dispose d'une « Phase Soleil Levant ». Il entre dans celle-ci quand il utilise sa capacité signature, Choc Météore. Quand Solgaleo entre dans la phase « Soleil Levant », son troisième œil, un symbole bleu clair qui ressemble à une rose des vents apparaît sur son front, et le ciel étoilé devient des gerbes de lumière. La fourrure de son corps devient jaune pâle et toutes les autres parties de son corps, à l’exception de son museau, deviennent jaune vif."}
+  nav
     a(href="../pokemons") Fermer la fenêtre

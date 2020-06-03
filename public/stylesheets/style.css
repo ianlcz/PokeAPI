@@ -74,12 +74,7 @@ a#panelButton:link {
   text-decoration: none;
   width: fit-content;
 }
-a#panelButton:hover {
-  background: var(--button-background-color);
-  color: white;
-  border-radius: 20px;
-  box-shadow: inset 0px 0px 10px var(--shadow-color);
-}
+a#panelButton:hover,
 a#panelButton.error {
   background: var(--button-background-color);
   color: white;
@@ -208,6 +203,10 @@ a:hover {
 #pokemon_show {
   display: flex;
 }
+section,
+article {
+  display: block;
+}
 section {
   padding: 2em;
   padding-bottom: 0;
@@ -224,7 +223,7 @@ section#leftPanel {
   width: 50%;
 }
 section#leftPanel article {
-  box-shadow: 0px 0px 10px var(--shadow-color);
+  box-shadow: 0px 0px 20px var(--shadow-color);
 }
 section#leftPanel h1,
 section#leftPanel h1 div {
@@ -241,12 +240,22 @@ section#leftPanel h1 div#namePokemon span.otherName {
   font-size: medium;
   font-weight: normal;
 }
-section#leftPanel img.picturePokemon {
+section#leftPanel img.picturePokemon,
+section#rightPanel img.picturePokemon {
   display: block;
-  margin: 2em auto;
+  margin: 2em auto 1em;
   width: 50%;
 }
-section#leftPanel div#infoPokemon.column h2.status {
+section#leftPanel div#infoPokemon {
+  margin: 1.2em 0;
+  display: flex;
+}
+section#leftPanel div#infoPokemon.column p.pokedex-description {
+  margin-bottom: 1.2em;
+  text-align: justify;
+  font-size: small;
+}
+section#leftPanel div#infoPokemon.column p.status {
   margin: 0 auto;
   padding: 2px 8px;
   width: fit-content;
@@ -259,13 +268,17 @@ section#leftPanel div#infoPokemon.column h2.status {
   font-weight: normal;
   box-shadow: inset 0px 0px 4px var(--shadow-color);
 }
-section#leftPanel div#infoPokemon {
-  margin: 1.2em 0;
+section#leftPanel div#container {
   display: flex;
+  margin: 1.6em auto;
+  justify-content: space-around;
+}
+section#leftPanel div#container div#infoPokemon {
+  margin: 0;
 }
 section#leftPanel div#infoPokemon ul.types {
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 0.6em;
   padding-left: 0;
   width: 46%;
   justify-content: space-around;
@@ -284,13 +297,9 @@ section#leftPanel div#infoPokemon p {
 section#leftPanel div#infoPokemon p span#categoryPokemon {
   font-weight: bold;
 }
-section#leftPanel div#infoPokemon ul.talents li span.hiddenTalent {
+section#leftPanel div#infoPokemon ul.values li span.hiddenTalent {
   font-size: smaller;
   font-weight: bold;
-}
-div#container {
-  display: flex;
-  justify-content: space-around;
 }
 section#leftPanel div#infoPokemon.row {
   flex-direction: row;
@@ -298,7 +307,7 @@ section#leftPanel div#infoPokemon.row {
   justify-content: space-between;
 }
 section#leftPanel div#infoPokemon.row p,
-section#leftPanel div#infoPokemon.row ul.talents {
+section#leftPanel div#infoPokemon.row ul.values {
   font-size: medium;
   vertical-align: baseline;
 }
@@ -309,19 +318,19 @@ section#leftPanel div#heightWeightPokemon div#infoPokemon.column {
   margin: inherit;
 }
 section#leftPanel div#infoPokemon.column p,
-section#leftPanel div#infoPokemon.column ul.talents {
+section#leftPanel div#infoPokemon.column ul.values {
   margin-top: 0.6em;
   margin-bottom: 0;
   font-size: medium;
 }
-section#leftPanel div#infoPokemon.column ul.talents {
+section#leftPanel div#infoPokemon.column ul.values {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding-left: 0;
   list-style: none;
 }
-section#leftPanel div#infoPokemon.row ul.talents {
+section#leftPanel div#infoPokemon.row ul.values {
   display: flex;
   flex-direction: row;
   margin: 0;
@@ -329,21 +338,118 @@ section#leftPanel div#infoPokemon.row ul.talents {
   justify-content: space-around;
   list-style: none;
 }
-section#leftPanel div#infoPokemon.column ul.talents li {
+section#leftPanel div#infoPokemon.column ul.values li {
   display: flex;
   flex-direction: column;
   text-align: center;
   top: 50%;
 }
-section#leftPanel div#infoPokemon.row ul.talents li span.hiddenTalent {
+section#leftPanel div#infoPokemon.row ul.values li span.hiddenTalent {
   margin-left: 1em;
 }
 section#rightPanel article {
-  box-shadow: inherit;
+  margin: 2em 0;
+  box-shadow: 0px 0px 10px var(--shadow-color);
+}
+section#rightPanel article:first-child,
+section#rightPanel article:last-child {
+  margin: inherit;
+}
+section#rightPanel article h2 {
+  text-align: center;
+}
+section#rightPanel article p {
+  text-align: justify;
+}
+section#rightPanel article#description ul li {
+  margin-bottom: 0.4em;
+}
+section#rightPanel article#shape {
+  padding: 0;
+  background: inherit;
+  box-shadow: none;
+}
+section#rightPanel article#shape h2 {
+  color: white;
+}
+section#rightPanel article#shape div#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+section#rightPanel article#shape div#shape-container {
+  display: flex;
+  flex-direction: column;
+  width: 36%;
+}
+section#rightPanel article#shape div#shape-container img.picturePokemon {
+  margin: 0 auto 1.2em;
+  width: 50%;
+  filter: drop-shadow(0px 0px 5px var(--shadow-color));
+}
+section#rightPanel article#shape div#shape-container div#shape-description {
+  padding: 1em;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px var(--shadow-color);
+}
+section#rightPanel article#shape div#shape-container div#shape-description h3 {
+  margin-top: 0;
+  font-size: medium;
+  text-align: center;
+}
+section#rightPanel article#shape div#shape-container div#shape-description p {
+  margin: 0;
+  font-size: small;
+}
+section#rightPanel article#evolution {
+  margin: 2em auto;
+  width: 70%;
+}
+section#rightPanel article#evolution div#container {
+  display: flex;
+  justify-content: space-around;
+}
+section#rightPanel article#evolution div#evolution img {
+  display: block;
+  margin: 0.8em auto 0 auto;
+  width: 70px;
+}
+section#rightPanel article#evolution div#evolution h3,
+section#rightPanel article#evolution div#evolution p {
+  text-align: center;
+}
+section#rightPanel article#evolution div#evolution h3 {
+  margin-top: 0.6em;
+}
+section#rightPanel article#evolution div#evolution h3 a {
+  color: inherit;
+  font-size: medium;
+}
+section#rightPanel article#evolution div#evolution h3 a:hover {
+  padding: 0.1em 0.6em;
+  background: var(--button-background-color);
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  box-shadow: 0px 0px 2px var(--shadow-color);
+}
+section#rightPanel article#evolution div#evolution div#meanEvolution {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+section#rightPanel article#evolution div#evolution div#meanEvolution i,
+section#rightPanel article#evolution div#evolution div#meanEvolution p {
+  margin: 0;
+}
+section#rightPanel article#evolution div#evolution div#meanEvolution i {
+  margin-right: 0.4em;
 }
 
 div#account {
-  margin: 2em 0 2em 0;
+  margin: 2em 0;
 }
 div#account div#container {
   margin: 1em 0;
