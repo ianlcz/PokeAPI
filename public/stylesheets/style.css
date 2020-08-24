@@ -347,9 +347,12 @@ section#leftPanel div#infoPokemon.column ul.values li {
 section#leftPanel div#infoPokemon.row ul.values li span.hiddenTalent {
   margin-left: 1em;
 }
+section#rightPanel article,
+section#rightPanel article#shape div#shape-container div#shape-description {
+  box-shadow: 0px 0px 6px var(--shadow-color);
+}
 section#rightPanel article {
   margin: 2em 0;
-  box-shadow: 0px 0px 10px var(--shadow-color);
 }
 section#rightPanel article:first-child,
 section#rightPanel article:last-child {
@@ -391,7 +394,6 @@ section#rightPanel article#shape div#shape-container div#shape-description {
   padding: 1em;
   background: white;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px var(--shadow-color);
 }
 section#rightPanel article#shape div#shape-container div#shape-description h3 {
   margin-top: 0;

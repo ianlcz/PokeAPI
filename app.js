@@ -1,6 +1,7 @@
 // Importation des modules
 const express = require("express");
 const logger = require("morgan");
+const cookieParser = require("cookie-parser");
 const session = require("./utils/session");
 const methodOverride = require("method-override");
 const favicon = require("serve-favicon");
@@ -23,8 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("./public"));
 app.use(favicon("./public/images/favicon.png"));
 app.use(methodOverride("_method"));
-
-console.log("\nStarting server on http://localhost:1996/\n");
 
 /*  Public routes
     Such as /, /login, /register, /pokemons, /types, /generations
