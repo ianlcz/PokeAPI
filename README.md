@@ -10,6 +10,8 @@ Avec **PokeAPI** vous pouvez récupérer différentes informations sur un Pokém
 
 ## Auteur
 
+- **Quentin REGNAULT** - Bordeaux Ynov Campus Informatique - [RegnaultQuentin](https://github.com/RegnaultQuentin)
+
 - **Yann LE COZ** - Bordeaux Ynov Campus Informatique - [ianlcz](https://github.com/ianlcz)
 
 ## Sommaire
