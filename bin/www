@@ -6,6 +6,8 @@ const debug = require("debug")("pokeapi:server");
 const http = require("http");
 const app = require("../app");
 const { normalize } = require("path");
+const mongoose = require("mongoose");
+require("dotenv/config");
 
 /* Définition du port d'écoute */
 const port = normalize(process.env.PORT || "1996");
@@ -45,6 +47,15 @@ function onError(error) {
       throw error;
   }
 }
+
+// Connexion à la base de donnée MongoDB PokeAPI
+mongoose.connect(
+  process.env.DB_CONNECTION,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  (req, res) => {
+    console.log("Vous êtes connectés à la base de donnée MongoDB PokeAPI !");
+  }
+);
 
 function onListening() {
   const addr = server.address();

@@ -7,7 +7,7 @@ const router = express.Router();
 */
 
 router.all("/*", (req, res, next) => {
-  res.header("Developer", "Yann Le Coz (alias ianDev)");
+  res.header("Developer", "Yann Le Coz (alias ianlcz)");
   res.header("Developer-Url", "https://yannlecoz.fr");
   next();
 });

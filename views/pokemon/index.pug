@@ -8,60 +8,24 @@ block content
       th Image
       th Nom
       th Types
-    tr
-    td #{395}
-    td
-      img.picturePokemon(src="https://www.pokepedia.fr/images/b/b5/Sprite_395_HOME.png" alt="Sprite de " + "Pingoléon")
-    td.namePokemon
-      ul
-        li
-          a(href="/pokemons/" + 727 title="Voir " + "Pingoléon") #{"Pingoléon"}
-        li #{"Empoleon"}
-          span.codeISO= "(EN)"
-        li #{"エンペルト (Enperuto) Emperte"}
-          span.codeISO= "(JA)"
-    td
-      ul
-        li
-          img.pictureType(src="https://www.pokepedia.fr/images/4/4c/Miniature_Type_Eau_EB.png" alt="Symbole du type " + "Eau")
-        li
-          img.pictureType(src="https://www.pokepedia.fr/images/b/b9/Miniature_Type_Acier_EB.png" alt="Symbole du type " + "Acier")
-    tr
-      td #{727}
-      td
-        img.picturePokemon(src="https://www.pokepedia.fr/images/5/54/Sprite_727_HOME.png" alt="Sprite de " + "Félinferno")
-      td.namePokemon
-        ul
-          li
-            a(href="/pokemons/" + 727 title="Voir " + "Félinferno") #{"Félinferno"}
-          li #{"Incineroar"}
-            span.codeISO= "(EN)"
-          li #{"ガオガエン Gaogaen"}
-            span.codeISO= "(JA)"
-      td
-        ul
-          li
-            img.pictureType(src="https://www.pokepedia.fr/images/f/fc/Miniature_Type_Feu_EB.png" alt="Symbole du type " + "Feu")
-          li
-            img.pictureType(src="https://www.pokepedia.fr/images/f/f4/Miniature_Type_Ténèbres_EB.png" alt="Symbole du type " + "Ténèbre")
-    tr
-      td #{791}
-      td
-        img.picturePokemon(src="https://www.pokepedia.fr/images/2/24/Sprite_791_HOME.png" alt="Sprite de " + "Solgaleo")
-      td.namePokemon
-        ul
-          li
-            a(href="/pokemons/" + 791 title="Voir " + "Solgaleo") #{"Solgaleo"}
-          li #{"Solgaleo"}
-            span.codeISO= "(EN)"
-          li #{"ソルガレオ (Sorugareo) Solgaleo"}
-            span.codeISO= "(JA)"
-      td
-        ul
-          li
-            img.pictureType(src="https://www.pokepedia.fr/images/d/da/Miniature_Type_Psy_EB.png" alt="Symbole du type " + "Psy")
-          li
-            img.pictureType(src="https://www.pokepedia.fr/images/b/b9/Miniature_Type_Acier_EB.png" alt="Symbole du type " + "Acier")
+    each pokemon in pokemons
+      tr
+        td #{pokemon.nationalNumber}
+        td
+          img.picturePokemon(src=`${pokemon.picture.sprite}` alt=`Sprite de ${pokemon.name.fr}`)
+        td.namePokemon
+          ul
+            li
+              a(href=`/pokemons/${pokemon.nationalNumber}` title=`Voir ${pokemon.name.fr}`) #{pokemon.name.fr}
+            li #{pokemon.name.en}
+              span.codeISO= "(EN)"
+            li #{pokemon.name.ja}
+              span.codeISO= "(JA)"
+        td
+          ul
+            each types in pokemon.types
+              li
+                img.pictureType(src=types.url alt=`Symbole du type ${types.name}`)
   nav
     a(href="/generations") Voir les Générations
     a(href="/") Fermer le Pokédex
