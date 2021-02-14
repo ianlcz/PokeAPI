@@ -4,50 +4,59 @@ block content
   div#pokemon_show
     section#leftPanel
       article
-        h1 #{"Solgaleo"}
+        h1 #{pokemon.name.fr}
           div#namePokemon
-            span.otherName #{"Solgaleo"}
-              span.codeISO= "(EN)"
-            span.otherName #{"ソルガレオ (Sorugareo) Solgaleo"}
+            if pokemon.name.fr !== pokemon.name.en
+              span.otherName #{pokemon.name.en}
+                span.codeISO= "(EN)"
+            span.otherName #{pokemon.name.ja}
               span.codeISO= "(JA)"
-        img.picturePokemon(src="https://www.pokepedia.fr/images/a/a7/Solgaleo-SL.png" alt="Artwork de " + "Solgaleo")
+        img.picturePokemon(src=pokemon.picture.artwork alt=`Artwork de ${pokemon.name.fr}`)
         div#infoPokemon.column
-          p.pokedex-description #{"Il viendrait d'un autre monde. Tout son corps émet une puissante lumière qui peut changer la nuit la plus noire en un jour radieux."}
-          p.status #{"Pokémon légendaire"}
+          if pokemon.description
+            p.pokedex-description #{pokemon.description}
+          if pokemon.generation
+            p.generation= `${pokemon.generation} génération`
         div#container
           div#infoPokemon.column
             h2= "Taille"
-            p #{3.4 + " m"}
+            p= `${pokemon.size} m`
           div#infoPokemon.column
             h2= "Poids"
-            p #{230.0 + " kg"}
+            p= `${pokemon.weight} kg`
         div#infoPokemon
           ul.types
-            li
-              img.pictureType(src="https://www.pokepedia.fr/images/d/da/Miniature_Type_Psy_EB.png" alt="Symbole du type " + "Psy")
-            li
-              img.pictureType(src="https://www.pokepedia.fr/images/b/b9/Miniature_Type_Acier_EB.png" alt="Symbole du type " + "Acier")
+            each types in pokemon.types
+              li
+                img.pictureType(src=types.url alt=`Symbole du type ${types.name}`)
         div#infoPokemon.row
           h2= "Catégorie"
           p= "Pokémon "
-            span#categoryPokemon #{"Halo Solaire"}
-        div#infoPokemon.row
-          h2= "Talent"
-          ul.values
-            li #{"Métallo-Garde"}
+            span#categoryPokemon #{pokemon.category}
         div#infoPokemon.row
           h2= "Point d'effort"
           ul.values
-            li #{"+" + 3 + " " + "Attaque"}
+            each EV in pokemon.EVYield
+              if EV.isSpecial
+                li= `${EV.value} ${EV.type.slice(0,3)}. Spé.`
+              else
+                li= `${EV.value} ${EV.type}`
         div#infoPokemon.row
           h2= "Point d'expérience"
-          p #{306 + " exp."}
+          p= `${pokemon.baseExperienceYield} exp.`
         div#infoPokemon.row
           h2= "Expérience au niveau 100"
-          p #{1250000 + " exp."}
+          p= `${hundredExperienceYield} exp.`
         div#infoPokemon.row
           h2= "Taux de capture"
-          p #{45}
+          p #{pokemon.catchRate}
+        div#infoPokemon.column
+          h2= `Talent${pokemon.abilities.length > 1 ? "s" : ""}`
+          ul#abilities.values
+            each talent in pokemon.abilities
+              li #{talent.name}
+                if talent.isHidden
+                  span.hiddenTalent= "(Talent caché)"
         
     section#rightPanel
       article#description
@@ -84,13 +93,15 @@ block content
             img(src="https://www.pokepedia.fr/images/d/d7/Lunala-SL.png" alt="Artwork de " + "Lunala")
             h3
               a(href="/pokemons/" + 792 title="Voir " + "Lunala") #{"Lunala"}
-      article#shape
-        h2="Formes"
-        div#container
-          div#shape-container
-            img.picturePokemon(src="https://www.pokepedia.fr/images/f/fc/Solgaleo_%28Phase_Soleil_Levant%29-SL.png", alt="shape de " + "Solgaleo" + ": " + "Phase « Soleil Levant »")
-            div#shape-description
-              h3 #{"Phase « Soleil Levant »"}
-              p #{"Solgaleo dispose d'une « Phase Soleil Levant ». Il entre dans celle-ci quand il utilise sa capacité signature, Choc Météore. Quand Solgaleo entre dans la phase « Soleil Levant », son troisième œil, un symbole bleu clair qui ressemble à une rose des vents apparaît sur son front, et le ciel étoilé devient des gerbes de lumière. La fourrure de son corps devient jaune pâle et toutes les autres parties de son corps, à l’exception de son museau, deviennent jaune vif."}
+      
+      if pokemon.shape
+        article#shape
+          h2="Formes"
+          div#container
+            div#shape-container
+              img.picturePokemon(src="https://www.pokepedia.fr/images/f/fc/Solgaleo_%28Phase_Soleil_Levant%29-SL.png", alt="shape de " + "Solgaleo" + ": " + "Phase « Soleil Levant »")
+              div#shape-description
+                h3 #{"Phase « Soleil Levant »"}
+                p #{"Solgaleo dispose d'une « Phase Soleil Levant ». Il entre dans celle-ci quand il utilise sa capacité signature, Choc Météore. Quand Solgaleo entre dans la phase « Soleil Levant », son troisième œil, un symbole bleu clair qui ressemble à une rose des vents apparaît sur son front, et le ciel étoilé devient des gerbes de lumière. La fourrure de son corps devient jaune pâle et toutes les autres parties de son corps, à l’exception de son museau, deviennent jaune vif."}
   nav
     a(href="../pokemons") Fermer la fenêtre

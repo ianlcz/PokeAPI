@@ -10,15 +10,16 @@ block content
       th Types
     each pokemon in pokemons
       tr
-        td #{pokemon.nationalNumber}
+        td ##{pokemon.nationalNumber}
         td
           img.picturePokemon(src=`${pokemon.picture.sprite}` alt=`Sprite de ${pokemon.name.fr}`)
         td.namePokemon
           ul
             li
               a(href=`/pokemons/${pokemon.nationalNumber}` title=`Voir ${pokemon.name.fr}`) #{pokemon.name.fr}
-            li #{pokemon.name.en}
-              span.codeISO= "(EN)"
+            if pokemon.name.fr !== pokemon.name.en
+              li #{pokemon.name.en}
+                span.codeISO= "(EN)"
             li #{pokemon.name.ja}
               span.codeISO= "(JA)"
         td
